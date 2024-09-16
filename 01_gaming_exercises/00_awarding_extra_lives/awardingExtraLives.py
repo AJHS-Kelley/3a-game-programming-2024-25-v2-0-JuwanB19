@@ -26,3 +26,5 @@ elif playerScore  < 100001:
 else:
     print(f"wsp {playerName}! you scored {playerScore} points and you get 2 extra lives\n")
     print(lives + 2)
+
+    
