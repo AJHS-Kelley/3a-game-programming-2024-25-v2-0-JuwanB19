@@ -50,9 +50,24 @@ putting a # in front of 15 diffenet lines.
 while playerScore < 5 and cpuScore < 5:
     print(f"{playerName} you have {playerScore} points.\nThe CPU has {cpuScore} points.\n")
     playerChoice = input("please enter rock, paper, or scissors and press enter\n").lower()
-    playerChoice = input
     if playerChoice != "rock" or playerChoice != "paper" or playerChoice != "scissors":
-        print("You are not following directions please try again.\n")
-        exit()
-    print(f"you have chosen {playerChoice}.\n")
+        playerChoice = input("please enter rock, paper, or scissors and press enter\n").lower()
+        if playerChoice != "rock" or playerChoice != "paper" or playerChoice != "scissors":
+            print("You are not following directions please try again.\n")
+            exit()
+        print(f"you have chosen {playerChoice}.\n")
+    else:
+        print(f"you have chosen {playerChoice}.\n")
 
+
+
+    # let cpu select choice at random 
+    # compare player choice to cpu choice
+    # print the result to the screen
+    # award point to winner and output result    
+    elif cpuChoice == 2:
+        cpuChoice = "paper"
+    else:
+        print("unable to determine CPU choice. \nPlease restart.\n")
+        exit()
+    
