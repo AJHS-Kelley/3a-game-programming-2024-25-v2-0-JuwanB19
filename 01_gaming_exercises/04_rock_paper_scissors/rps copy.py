@@ -1,63 +1,23 @@
 # Rock, Paper, Scissors by Juwan Brunson v0.1
 
 # MODULE IMPORTS
-import random
+import random, time
 
 # DATA STRUCTURES -- PLAYER
 playerScore = 0
-playerName = "Test player"
 playerChoice = None
+numDraws = 0
 
 # DATA STRUCTRES -- CPU
 cpuScore = 0
 cpuChoice = None
 
-# PLAYER NAME INPUT
-playerName = input("Please type your name and press enter.\n")
-print(f"hello{playerName}!\n")
-iscorrect = input("IS that correct? Type yes or no then press enter.\n").lower()
-
-# .lower() can turn All input into lowercase.
-# .lower() can turn All input into UPPERCASE.
-
-if iscorrect == "yes":
-    print(f"ok {playerName}, Lets play rock paper scissors!\n")
-else:
-    playerName = input("please type your name and press enter.\n")
-
-# THE RULES using MULTI-LINE STRINGS
-print(f"""
-welcome, {playerName} to the rock, paper, scissors robot! 
-It's Time To play rock, paper, scissors!
-
-you will play against the cpu. the first player to score 5 points wins.end
-you will select from ROCK, PAPER, or SCISSORS.
-the cpu will select from ROCK, PAPER, or SCISSORS at random.
-
-1) Rock beats scissors
-2) scissors beats paper
-3) paper beats rock
-""")
-
-# MUlTI_ LINES STRINGS CAN BE USED AS BIG COMMENTS
-"""
-Anything in between the sets of double-quote is just ignored.
-If you need to write large comments, it's easier to use multii- line strings than 
-putting a # in front of 15 diffenet lines.
-"""
-
 # MAIN GAME LOOP
-while playerScore < 5 and cpuScore < 5:
-    print(f"{playerName} you have {playerScore} points.\nThe CPU has {cpuScore} points.\n")
-    playerChoice = input("please enter rock, paper, or scissors and press enter\n").lower()
-    if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
-        playerChoice = input("please enter rock, paper, or scissors and press enter\n").lower()
-        if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
-            print("You are not following directions please try again.\n")
-            exit()
-        print(f"you have chosen {playerChoice}.\n")
-    else:
-        print(f"you have chosen {playerChoice}.\n")
+loopCount = 0
+loopsReq = int(input("how many loops do you want?\nenter an integer an integer, no commas, and press enter\n"))
+# req is th euniversal abbreviation in computer programming for REQUEST reqs= requests
+rpsTimeStart = time.time() #returns seconds since jan 01 1970 @ 12am
+while loopCount < loopsReq:
 
     # let cpu select choice at random 
     cpuChoice = random.randint(0,2) # randomly setect 0,1 or 2
@@ -72,7 +32,18 @@ while playerScore < 5 and cpuScore < 5:
         exit()
     # print(f"cpu choice: {cpuchoice}")
         
-    # compare player choice to cpu choice
+    # let player choice at random
+    cpuChoice = random.randint(0,2) # randomly setect 0,1 or 2
+    if cpuChoice == 0:
+        cpuChoice = "rock"
+    elif cpuChoice == 1:
+        cpuChoice = " scissors"
+    elif cpuChoice == 2:
+        cpuChoice = "paper"
+    else:
+        print("unable to determine cpu choice.\nPlease restart.\n")
+        exit()
+
     if playerChoice == "rock" and cpuChoice == "paper":
         #cpu wins
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
@@ -87,6 +58,7 @@ while playerScore < 5 and cpuScore < 5:
         #draw
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
         print("its a draw.\n")
+        numDraws += 1
     elif playerChoice == "scissors" and cpuChoice == "rock":
         # cpu wins
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
@@ -101,6 +73,7 @@ while playerScore < 5 and cpuScore < 5:
         #draw
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
         print("its a draw.\n")
+        numDraws += 1
     elif playerChoice == "paper" and cpuChoice == "rock":
         #player wins
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
@@ -110,6 +83,7 @@ while playerScore < 5 and cpuScore < 5:
         #draw
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
         print("its a draw.\n")
+        numDraws += 1
     elif playerChoice == "paper" and cpuChoice == "scissors":
         # cpu wins
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
@@ -117,14 +91,21 @@ while playerScore < 5 and cpuScore < 5:
         cpuScore += 1
     else:
         print("unable to determine restart.\n")
-        exit()   
+        exit()
+    loopCount += 1
 
-
-    print(f"your final score: {playerScore}\ncpu final score: {cpuScore}\n")
-    if playerScore > cpuScore:
-        print(f"congrats {playerName} you won")
-    elif cpuScore > playerScore:
+    
+    
+    print(f"your final score: {playerScore}\ncpu final score: {cpuScore}\n {numDraws}\n")
+if playerScore > cpuScore:
+        print(f"congratsyou won")
+elif cpuScore > playerScore:
         print(f"the cpu won, you suck")
-    else:
+else:
         print("unable to determine winner.\n restart.\n")
         exit()
+
+rpsTimeStart = time.time()
+rpsTime = rpsTimeStop - rpsTimeStart
+print(f"number of loops: {loopCount}\n")
+print(f"Execution time {rpsTime:.2F} seconds\n"):.2F formats 
