@@ -24,11 +24,11 @@ while loopCount < loopsReq:
     if playerChoice == 0:
         playerChoice = "rock"
     elif playerChoice == 1:
-        playerChoice = " scissors"
+        playerChoice = "scissors"
     elif playerChoice == 2:
         playerChoice = "paper"
     else:
-        print("unable to determine cpu choice.\nPlease restart.\n")
+        print("unable to determine playeru choice.\nPlease restart.\n")
         exit()
     # print(f"cpu choice: {cpuchoice}")
         
@@ -37,13 +37,13 @@ while loopCount < loopsReq:
     if cpuChoice == 0:
         cpuChoice = "rock"
     elif cpuChoice == 1:
-        cpuChoice = " scissors"
+        cpuChoice = "scissors"
     elif cpuChoice == 2:
         cpuChoice = "paper"
     else:
         print("unable to determine cpu choice.\nPlease restart.\n")
         exit()
-
+    print(f"cpu choice {cpuChoice}\n playerChoice {playerChoice}")
     if playerChoice == "rock" and cpuChoice == "paper":
         #cpu wins
         print(f"the cpu chose {cpuChoice} and you chose {playerChoice}.\n")
@@ -96,14 +96,14 @@ while loopCount < loopsReq:
 
     
     
-    print(f"your final score: {playerScore}\ncpu final score: {cpuScore}\n {numDraws}\n")
+print(f"your final score: {playerScore}\ncpu final score: {cpuScore}\ndraws: {numDraws}\n")
 if playerScore > cpuScore:
-        print(f"congrats you won")
+    print(f"congrats you won")
 elif cpuScore > playerScore:
-        print(f"the cpu won, you suck")
+    print(f"the cpu won, you suck")
 else:
-        print("unable to determine winner.\n restart.\n")
-        exit()
+    print("unable to determine winner.\n restart.\n")
+    exit()
 
 rpsTimeStop = time.time()
 rpsTime = rpsTimeStop - rpsTimeStart
