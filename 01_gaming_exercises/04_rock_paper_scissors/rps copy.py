@@ -12,21 +12,21 @@ numDraws = 0
 cpuScore = 0
 cpuChoice = None
 
+
 # MAIN GAME LOOP
 loopCount = 0
 loopsReq = int(input("how many loops do you want?\nenter an integer an integer, no commas, and press enter\n"))
 # req is th euniversal abbreviation in computer programming for REQUEST reqs= requests
 rpsTimeStart = time.time() #returns seconds since jan 01 1970 @ 12am
 while loopCount < loopsReq:
-
     # let cpu select choice at random 
-    cpuChoice = random.randint(0,2) # randomly setect 0,1 or 2
-    if cpuChoice == 0:
-        cpuChoice = "rock"
-    elif cpuChoice == 1:
-        cpuChoice = " scissors"
-    elif cpuChoice == 2:
-        cpuChoice = "paper"
+    playerChoice = random.randint(0,2) # randomly setect 0,1 or 2
+    if playerChoice == 0:
+        playerChoice = "rock"
+    elif playerChoice == 1:
+        playerChoice = " scissors"
+    elif playerChoice == 2:
+        playerChoice = "paper"
     else:
         print("unable to determine cpu choice.\nPlease restart.\n")
         exit()
@@ -98,14 +98,14 @@ while loopCount < loopsReq:
     
     print(f"your final score: {playerScore}\ncpu final score: {cpuScore}\n {numDraws}\n")
 if playerScore > cpuScore:
-        print(f"congratsyou won")
+        print(f"congrats you won")
 elif cpuScore > playerScore:
         print(f"the cpu won, you suck")
 else:
         print("unable to determine winner.\n restart.\n")
         exit()
 
-rpsTimeStart = time.time()
+rpsTimeStop = time.time()
 rpsTime = rpsTimeStop - rpsTimeStart
 print(f"number of loops: {loopCount}\n")
-print(f"Execution time {rpsTime:.2F} seconds\n"):.2F formats 
+print(f"Execution time {rpsTime:.2F} seconds\n")
