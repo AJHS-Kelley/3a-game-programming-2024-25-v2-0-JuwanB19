@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors by Juwan Brunson v0.1
+# Rock, Paper, Scissors by Juwan Brunson v3.0
 
 # MODULE IMPORTS
 import random
@@ -13,17 +13,21 @@ cpuScore = 0
 cpuChoice = None
 
 # PLAYER NAME INPUT
-playerName = input("Please type your name and press enter.\n")
-print(f"hello{playerName}!\n")
-iscorrect = input("IS that correct? Type yes or no then press enter.\n").lower()
+def playerName(): #function signiature -- name of function (arugment)
+    playerName = input("Please type your name and press enter.\n")
+    print(f"hello{playerName}!\n")
+    iscorrect = input("IS that correct? Type yes or no then press enter.\n").lower()
 
-# .lower() can turn All input into lowercase.
-# .lower() can turn All input into UPPERCASE.
+    # .lower() can turn All input into lowercase.
+    # .lower() can turn All input into UPPERCASE.
 
-if iscorrect == "yes":
-    print(f"ok {playerName}, Lets play rock paper scissors!\n")
-else:
-    playerName = input("please type your name and press enter.\n")
+    if iscorrect == "yes":
+        print(f"ok {playerName}, Lets play rock paper scissors!\n")
+    else:
+        playerName = input("please type your name and press enter.\n")
+
+#Calling the function
+playerName()
 
 # THE RULES using MULTI-LINE STRINGS
 print(f"""
