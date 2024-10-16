@@ -13,7 +13,9 @@ cpuScore = 0
 cpuChoice = None
 
 # PLAYER NAME INPUT
-def playerName(): #function signiature -- name of function (arugment)
+def playerName()->str: #function signiature -- name of function (arugment)
+    """gets name of player and returns it """
+    #the line above is a docstring gives breif example about what a function does
     playerName = input("Please type your name and press enter.\n")
     print(f"hello{playerName}!\n")
     iscorrect = input("IS that correct? Type yes or no then press enter.\n").lower()
@@ -26,7 +28,8 @@ def playerName(): #function signiature -- name of function (arugment)
 playerName = playerName()
 
 # THE RULES using MULTI-LINE STRINGS
-def rules():
+def rules()->None:
+    """this function peints rules of rps"""
     print(f"""
     welcome, {playerName} to the rock, paper, scissors robot! 
     It's Time To play rock, paper, scissors!
@@ -43,7 +46,8 @@ def rules():
     #if yes must have a return
     #if no a return statement is not required
 
-def playerChoice():
+def playerChoice()->str:
+    """allows player to chose rock paper scissors"""
     playerChoice = input("please enter rock, paper, or scissors and press enter\n").lower()
     if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
         playerChoice = input("please enter rock, paper, or scissors and press enter\n").lower()
@@ -55,7 +59,8 @@ def playerChoice():
         print(f"you have chosen {playerChoice}.\n")
     return playerChoice
 
-def cpuChoice():
+def cpuChoice()->str:
+    """allows cpu to chose rock paper scissors"""
     cpuChoice = random.randint(0,2) # randomly setect 0,1 or 2
     if cpuChoice == 0:
         cpuChoice = "rock"
