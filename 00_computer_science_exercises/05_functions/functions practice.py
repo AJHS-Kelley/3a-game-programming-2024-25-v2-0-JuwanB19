@@ -48,4 +48,4 @@ def canRideRollerCoaster(age: int, height: int) -> bool:
         print("you can't ride\n")
         return False
     
-canRideRollerCoaster(4,10) #arguments must be passed in the same order as the function signature indicates
+canRideRollerCoaster(11,5) #arguments must be passed in the same order as the function signature indicates
