@@ -3,7 +3,23 @@
 
 import random
 import time
+import datetime
 playerChoice = input
+
+
+#saving data to a file
+#step 1 create the file name to use
+logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
+#example: dragonrealm1132am.txt
+
+#step 2 create / open the file to save the data
+saveData = open(logFileName, "a") 
+#file modes
+#x creates file if file exist exit with error message
+#w creates file if file exist erase and rewrite file contents
+#a creates file if file exist append data to the file
+
+saveData.write("GAME STARTED" +" " +str(datetime.datetime.now())+"\n")
 
 def displayIntro():
 
@@ -71,3 +87,7 @@ while playAgain == 'yes' or playAgain == 'y':
     checkCave(caveNumber)
     print('Do you want to play again? (yes or no)')
     playAgain = input()
+
+#close the file
+saveData.write("END OF GAME LOG\n\n")
+saveData.close()
