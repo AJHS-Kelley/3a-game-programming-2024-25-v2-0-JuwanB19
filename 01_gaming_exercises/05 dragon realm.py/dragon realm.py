@@ -1,5 +1,6 @@
 # Dragon Realm, <STUDENT_NAME>, v0.0
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
+# You have made some progress but need to finish! 
 
 import random
 import time
@@ -10,6 +11,7 @@ playerChoice = input
 #saving data to a file
 #step 1 create the file name to use
 logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
+# Just use "dragonRealmLog.txt"
 #example: dragonrealm1132am.txt
 
 #step 2 create / open the file to save the data
@@ -31,10 +33,10 @@ def displayIntro():
 
 def chooseArea():
     """choose whether the cave is in the forest or desert"""
-    location = input    
+    location = input # You're missing the () for input.  This code also does not print anything to the screen to tell the player what to choose.    
     if location == "[f]orest":
         print('on the way to the forest you see some caves')
-    elif location == "[d]esrt":
+    elif location == "[d]esrt": #spelling 
         print('on the way to the desert you see some caves')
     else:
         print("smh")
