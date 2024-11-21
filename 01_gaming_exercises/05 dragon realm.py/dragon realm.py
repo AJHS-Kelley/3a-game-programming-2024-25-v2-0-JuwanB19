@@ -31,20 +31,26 @@ def displayIntro():
     print('but you have to be able to fight enemys')
     print()
 
+def lookingAtMap():
+    print('you look down at the map while trying to decide where to go')
+    print('pick the forest or the desert f or d')
+
 def chooseArea():
     """choose whether the cave is in the forest or desert"""
-    location = input # You're missing the () for input.  This code also does not print anything to the screen to tell the player what to choose.    
+    location = input() # You're missing the () for input.  This code also does not print anything to the screen to tell the player what to choose.    
     if location == "[f]orest":
         print('on the way to the forest you see some caves')
-    elif location == "[d]esrt": #spelling 
+    elif location == "[d]esert":
         print('on the way to the desert you see some caves')
     else:
         print("smh")
+        location = input
     return location
 
-    while input != "[f]orest" and "[d]esert":
+while input != "[f]orest" and "[d]esert":
         print('where do you want to go')
         location = input()
+        
 def caveChoice():
     """ takes the location choosen and while otw to it you see caves"""
 def walkToArea():
@@ -83,12 +89,13 @@ playAgain = 'yes'
 
 while playAgain == 'yes' or playAgain == 'y':
     displayIntro()
+    lookingAtMap()
     areaChosen = chooseArea()
-    walkToArea()
-    caveNumber = chooseCave()
-    checkCave(caveNumber)
-    print('Do you want to play again? (yes or no)')
-    playAgain = input()
+    #walkToArea()
+    #caveNumber = chooseCave()
+    #checkCave(caveNumber)
+    #print('Do you want to play again? (yes or no)')
+    #playAgain = input()
 
 #close the file
 saveData.write("END OF GAME LOG\n\n")
