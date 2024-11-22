@@ -5,8 +5,8 @@
 import random
 import time
 import datetime
-playerChoice = input
-
+location = input
+thingy = input
 
 #saving data to a file
 #step 1 create the file name to use
@@ -44,18 +44,29 @@ def chooseArea():
         print('on the way to the desert you see some caves')
     else:
         print("smh")
-        location = input
     return location
-
-while input != "[f]orest" and "[d]esert":
-        print('where do you want to go')
-        location = input()
         
+def pickup():
+
+    print('you need something to carry with you for your adhd')
+    print('you either get a flamethrower or pipebomb')
+    print()
+
+def adhdCure():
+
+    if thingy == "[f]lamethrower":
+        print('you burnt you hand')
+    elif thingy == "[p]ipebomb":
+        print('you blew your brains out')
+    else:
+        print("you died of adhd")
+    return adhdCure
+
 def caveChoice():
     """ takes the location choosen and while otw to it you see caves"""
 def walkToArea():
-    print('while going to the selected location you see 2 caves')
-    print('cave 1 us big cave 2 is small pick one')
+    print(f'while going to the {location}\n you see 2 caves')
+    print('cave 1 is big cave 2 is small pick one')
     print()
 
 def chooseCave():
@@ -91,11 +102,11 @@ while playAgain == 'yes' or playAgain == 'y':
     displayIntro()
     lookingAtMap()
     areaChosen = chooseArea()
-    #walkToArea()
-    #caveNumber = chooseCave()
-    #checkCave(caveNumber)
-    #print('Do you want to play again? (yes or no)')
-    #playAgain = input()
+    walkToArea()
+    caveNumber = chooseCave()
+    checkCave(caveNumber)
+    print('Do you want to play again? (yes or no)')
+    playAgain = input()
 
 #close the file
 saveData.write("END OF GAME LOG\n\n")
