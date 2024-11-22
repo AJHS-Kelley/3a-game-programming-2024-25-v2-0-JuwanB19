@@ -49,17 +49,17 @@ def chooseArea():
 def pickup():
 
     print('you need something to carry with you for your adhd')
-    print('you either get a flamethrower or pipebomb')
+    print('you either get a blastgun or pipebomb')
     print()
 
 def adhdCure():
 
-    if thingy == "[f]lamethrower":
+    if thingy == "[b]lastgun":
         print('you burnt you hand')
     elif thingy == "[p]ipebomb":
-        print('you blew your brains out')
+        print('you blew your arm off')
     else:
-        print("you died of adhd")
+        print("you suffer from adhd")
     return adhdCure
 
 def caveChoice():
@@ -103,6 +103,7 @@ while playAgain == 'yes' or playAgain == 'y':
     lookingAtMap()
     areaChosen = chooseArea()
     walkToArea()
+    adhdCure()
     caveNumber = chooseCave()
     checkCave(caveNumber)
     print('Do you want to play again? (yes or no)')
