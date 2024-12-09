@@ -1,7 +1,7 @@
 # Dragon Realm, <STUDENT_NAME>, v0.0
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
 # You have made some progress but need to finish! 
-
+# Well done. This was a tough project but you solved all the challenges you faced.  Thanks Juwan! 
 import random
 import time
 import datetime
@@ -10,7 +10,7 @@ thingy = input
 
 #saving data to a file
 #step 1 create the file name to use
-logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
+logFileName = "dragonRealmLog.txt"
 # Just use "dragonRealmLog.txt"
 #example: dragonrealm1132am.txt
 
